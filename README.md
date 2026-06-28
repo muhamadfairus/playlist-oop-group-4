@@ -1,12 +1,10 @@
-# playlist-oop-group-4
-1. Penerapan Inheritance
-Dalam program sistem manajemen playlist, konsep inheritance diterapkan untuk menciptakan hierarki user dan menghindari duplikasi kode.
-Parent Class dibuat class User sebagai kelas induk yang memiliki atribut nama (dengan access modifier protected agar bisa diakses anak kelasnya) serta sebuah method dasar tampilkanAkses().
-Child Class, Class Admin dan Member dibuat sebagai kelas turunan yang mewarisi class User.
-Karena mewarisi User, Admin maupun Member secara otomatis memiliki atribut nama tanpa perlu mendeklarasikannya ulang. Pada constructor Admin dan Member memanggil constructor milik parent class menggunakan super(nama). Ini merepresentasikan hubungan "is-a" (Admin adalah seorang User, dan Member adalah seorang User), namun masing-masing anak kelas dapat memiliki method tambahannya sendiri (seperti tambahLagu pada Admin dan hitungRataRataDurasi pada Member).
+# playlist-array-group-4
 
-2. Penerapan Polymorphism
-Polymorphism yang diterapkan dalam program ini adalah tipe Dynamic Polymorphism (Method Overriding). Konsep ini memungkinkan child class memberikan implementasi yang spesifik pada method yang sudah didefinisikan oleh parent class-nya.
-Pada parent class User, terdapat method tampilkanAkses() yang secara default mencetak informasi umum. Lalu, method ini dioverride oleh class Admin dan Member dengan menambahkan anotasi @Override.
-Pada class Admin, method tersebut diubah untuk menampilkan teks "Admin dapat menambahkan lagu baru...", sedangkan pada class Member diubah menjadi "Member dapat melihat daftar lagu, ... mencari lagu, dan menghitung rata-rata durasi.".
-Dengan polimorfisme, meskipun Admin dan Member merupakan turunan dari entitas yang sama (User), ketika pemanggilan method tampilkanAkses() dilakukan pada objek yang berbeda, output yang dihasilkan akan secara dinamis menyesuaikan dengan peran spesifik dari objek tersebut.
+Implementasi Operasi Array
+
+Dalam program ini, kami mengelola data lagu menggunakan array objek Lagu[] dengan kapasitas maksimal 10. Berikut adalah operasi dasar yang diimplementasikan:
+ 1. Traversal: Menelusuri seluruh elemen array dari indeks 0 hingga n-1. Setiap elemen dikunjungi tepat satu kali, sehingga waktu eksekusi berbanding lurus dengan jumlah elemen (n).
+ 2. Searching : Menggunakan Linear Search yang memeriksa setiap elemen satu per satu dari awal hingga akhir. Pada kasus terburuk, elemen yang dicari berada di posisi terakhir atau tidak ada, sehingga semua n elemen harus diperiksa.
+ 3. Insertion: Penambahan dilakukan di akhir array (posisi jumlahLagu), tanpa perlu menggeser elemen lain. Operasi ini hanya membutuhkan satu langkah assignment, sehingga konstan.
+ 4. Deletion: Setelah menemukan elemen yang akan dihapus (O(n)), elemen-elemen setelahnya harus digeser ke kiri satu per satu untuk menjaga kesinambungan array. Pada kasus terburuk, elemen pertama dihapus sehingga n-1 elemen harus digeser. Total kompleksitas: O(n) + O(n) = O(n).
+ 5. Sorting: Bubble sort termasuk dalam kategori O(n²) karena pada kasus rata-rata dan worst case nya algoritma ini harus membandingkan hampir dari setiap elemennya dengan elemen yang lainnya melalui nested loop. Selection sort juga termasuk dalam kategori O(n²) karena untuk setiap posisi dalam array algoritma ini harus mencari elemen terkecil terlebih dahulu dari sisa array nya, sehingga menghasilkan dua perulangan bersarang (nested loop).
