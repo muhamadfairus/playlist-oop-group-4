@@ -42,8 +42,9 @@ public class Lagu {
 
   // Method untuk menampilkan informasi lagu
   public void tampilkanInfo() {
-    System.out.printf("Judul  : %s\n", this.judul);
-    System.out.printf("Artis  : %s\n", this.artis);
-    System.out.printf("Durasi : %.2f menit\n", this.durasi);
+    System.out.printf("%s - %s (%.2f menit)%n",
+            this.judul,
+            this.artis,
+            this.durasi);
   }
 }

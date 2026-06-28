@@ -143,7 +143,7 @@ public class PlaylistArray {
         String judulCari = scanner.nextLine();
         boolean ditemukan = false;
 
-        // LLinear search dengan memeriksa setiap elemen satu per satu dari awal sampai akhir
+        // Linear search dengan memeriksa setiap elemen satu per satu dari awal sampai akhir
         for (int i = 0; i < jumlahLagu; i++) {
             if (playlist[i].getJudul().equalsIgnoreCase(judulCari)) {
                 System.out.println("Lagu ditemukan pada urutan ke-" + (i + 1) + ":");
